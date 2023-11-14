@@ -47,11 +47,11 @@ guessInput.addEventListener('keydown', event => {
   if (event.key === 'Enter') {
     checkGuess();
   } else if (event.key === 'ArrowUp') {
-    currentGuess = Math.min(currentGuess + 1, 20);
+    currentGuess++;
     guessInput.value = currentGuess;
     event.preventDefault();
   } else if (event.key === 'ArrowDown') {
-    currentGuess = Math.max(currentGuess - 1, 1);
+    currentGuess = currentGuess > 1 ? currentGuess - 1 : 1;
     guessInput.value = currentGuess;
     event.preventDefault();
   }
